@@ -1,0 +1,67 @@
+<!-- <p>sign-up works!</p> -->
+<div class="container">
+    <mat-card class="card">
+        <div>
+            <img src="../../../assets\login\img.png" class="img">
+        </div>
+        <div class="text">
+            <p><b>ONLINE BOOK SHOPPING</b> </p>
+        </div>
+    </mat-card>
+    <mat-card class="card1">
+        <div fxLayout="row" fxLayoutAlign="space-around center" style="margin-top: 20px;">
+            <div class="text1" routerLink="/login">
+                <p>LOGIN</p>
+            </div>
+            <div class="text2">
+                <P>SIGNUP</P>
+            </div>
+        </div>
+        <div class="line">
+        
+        </div>
+        <form [formGroup]="signinForm" (ngSubmit)="onSubmit()" >
+            <div style="margin-left: 58px;">
+                <div>
+                    <div class="font">
+                        <p>Full Name</p>
+                    </div>
+                    <mat-form-field class="input-field" appearance="outline">
+                        <input  matInput class="input" type="text" placeholder="full name" formControlName="fullName"/>
+                        <mat-error>Enter Full Name</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <div class="font1">
+                        <p>Email Id</p>
+                    </div>
+                    <mat-form-field class="input-field" appearance="outline">
+                        <input  matInput class="input" type="text" placeholder="email" formControlName="email"/>
+                        <mat-error class="error">Enter Email Id</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <div class="font1">
+                        <p>Password</p>
+                    </div>
+                    <mat-form-field class="input-field" appearance="outline">
+                        <input  matInput class="input" type="text" placeholder="password" formControlName="password"/>
+                        <mat-error>Enter Password</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <div class="font1">
+                        <p>Mobile Number</p>
+                    </div>
+                    <mat-form-field class="input-field" appearance="outline">
+                        <input  class="input"  matInput type="text" placeholder="mobile number" formControlName="mobileNumber"/>
+                        <mat-error>Enter Mobile Number</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button class="button" mat-raised-button (click)="onSubmit()">SignUp</button>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

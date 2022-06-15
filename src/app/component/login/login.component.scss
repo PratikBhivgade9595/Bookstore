@@ -1,0 +1,174 @@
+.container {
+    top: 0px;
+    left: 0px;
+    width: 100%; //1366px
+    height: 640px; //768 //640
+    background: grey;
+    //opacity: 0.31;
+}
+
+.card {
+    top: 140px;  //185
+    left: 320px;
+    width: 624px;
+    height: 391px;
+    /* UI Properties */
+    background: #F5F5F5;
+    border-radius: 21px;
+    //opacity: 1;
+}
+
+.img {
+    margin-top: 52px;
+    margin-left: 53px;
+
+    // top: 237px;
+    // left: 373px;
+    width: 245px;
+    height: 245px;
+    /* UI Properties */
+    //background: transparent url('img/Intersection 1.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-radius: 125px;
+}
+
+.text {
+    margin-left: 71px;
+    margin-top: 31px;
+    width: 209px;
+    height: 24px;
+    /* UI Properties */
+    //text-align: left;
+    font: normal normal medium 18px/24px Roboto;
+    letter-spacing: 1px;
+    color: #0A0102;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.card1 {
+    // margin-top: 166px;
+    margin-left: 668px;
+    margin-top: -305px;
+    width: 389px;
+    height: 425px;
+    //* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 15px #00000029;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    opacity: 1;
+    // display: flex;
+    position: relative;
+}
+
+.text1 {
+    /* Layout Properties */
+    // top: 194px;
+    // left: 727px;
+    width: 72px;
+    height: 33px;
+    /* UI Properties */
+    text-align: left;
+    //font: normal normal medium 25px/33px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: uppercase;
+    opacity: 1;
+    font-size: 25px;
+}
+
+.text2 {
+    /* Layout Properties */
+    // top: 194px;
+    // left: 881px;
+    width: 89px;
+    height: 33px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal medium 25px/33px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    text-transform: uppercase;
+    opacity: 1;
+    font-size: 25px;
+}
+
+.font-size {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.input-fields {
+    //margin-top: -80px;
+    width: 252px;
+    margin-top: -20px;
+    //height: 28px;
+    height: -10px;
+}
+
+.inputs {
+    width: 252px;
+    height: 28px;
+    /* UI Properties */
+    background: #FFFFFF;
+    //border: 1px solid #FF001C;
+    border-radius: 2px;
+    opacity: 0.7;
+   
+}
+
+.login-but {
+    width: 259px;
+    height: 32px;
+/* UI Properties */
+    background: #A03037 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    color: blanchedalmond;
+    margin-top: 5px;
+}
+
+.font-size1 {
+    font-size: 13px; 
+    margin-top: -15px;
+}
+
+.or {
+    margin-top: 30px;
+    margin-left: 35px;
+    height: 18px;
+    opacity: 0.8;
+}
+
+.Facebook-but{
+    color: white;
+    width: 126px;
+    height: 37px;
+    /* UI Properties */
+    background: #4266B2 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+}
+.google-but {
+    margin-left: 12px;
+    width: 119px;
+    height: 37px;
+    /* UI Properties */
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border: 1px solid #E4E4E4;
+    border-radius: 3px;
+    opacity: 1;
+}
+
+.line {
+    margin-top: -10px;
+    margin-left: 86px;
+    //position: relative;
+    width: 22px;
+    height: 5px;
+    /* UI Properties */
+    background: #A03037 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+}

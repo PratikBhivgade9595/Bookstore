@@ -1,0 +1,45 @@
+<!-- <p>dashboard works!</p> -->
+<diV>
+    <mat-toolbar class="mat-toolbar">
+        <div fxLayout="space-around center">
+            <img src="../../../assets\dashboard\book.png" class="img">
+            <a class="text">Bookstore</a>
+        </div>
+        <mat-card class="mat-card">
+            <button mat-icon-button>
+                <mat-icon class="mat-icon-search">search</mat-icon>
+            </button>
+            <input type="text" placeholder="Search..." class="input">
+        </mat-card>
+        <div class="btn">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon style="color: white;">perm_identity</mat-icon>
+                <p style="margin-top: -20px; color:white">Profile</p>
+
+                <mat-menu #menu="matMenu">
+                    <div fxLayout="column" fxLayoutAlign="space-around center">
+                        <h4>Welcome</h4>
+                        <h5 class="menu-text">Pratik Bhivgade</h5>
+                    </div>
+                    <!-- <button mat-menu-item>
+                      <mat-icon>dialpad</mat-icon>
+                      <span>Redial</span>
+                    </button> -->
+                    <div fxLayoutAlign="space-around center">
+                        <button (click)="logout()">logout</button>
+                    </div>
+                </mat-menu>
+            </button>
+        </div>
+        <div class="btn1">
+            <button mat-icon-button>
+                <mat-icon style="color: white;">shopping_cart</mat-icon>
+                <p style="margin-top: -20px; color:white">Cart</p>
+            </button>
+        </div>
+
+    </mat-toolbar>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</diV>

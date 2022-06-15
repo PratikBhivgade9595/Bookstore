@@ -1,0 +1,60 @@
+<div class="container">
+    <mat-card class="card">
+        <div>
+            <img src="../../../assets\login\img.png" class="img">
+        </div>
+        <div class="text">
+            <p><b>ONLINE BOOK SHOPPING</b> </p>
+        </div>
+    </mat-card>
+    <mat-card class="card1">
+        <div fxLayout="row" fxLayoutAlign="space-around center" style="margin-top: 20px;">
+            <div class="text1">
+                <p>LOGIN</p>
+            </div>
+            
+            <div class="text2" routerLink="/signin">
+                <P>SIGNUP</P>
+            </div>
+        </div>
+        <div class="line">
+        
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div style="margin-left: 58px;">
+                <div>
+                    <div class="font-size">
+                        <p>Email Id</p>
+                    </div>
+                    <div>
+                        <mat-form-field class="input-fields" appearance="outline">
+                            <input matInput  type="text"  placeholder="email" formControlName="email"/>
+                            <mat-error>Enter email address</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-size1">
+                        <p>Password</p>
+                    </div>
+                    <div>
+                        <mat-form-field class="input-fields" appearance="outline">
+                            <input matInput  type="text"  placeholder="password" formControlName="password"/>
+                            <mat-error>Enter Password</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                    <button class="login-but" mat-raised-button (click)="onSubmit()">Login</button>
+                </div>
+                <div>
+                    <p class="or">----------------------<b>OR</b>------------------------</p>
+                </div>
+                <div style="margin-top: 35px;">
+                    <button class="Facebook-but" mat-raised-button>Facebook</button>
+                    <button class="google-but" mat-raised-button>Google</button>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>
