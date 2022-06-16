@@ -20,6 +20,8 @@ import { LoginComponent } from './component/login/login.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { GetallbookComponent } from './component/getallbook/getallbook.component';
+import { CartComponent } from './component/cart/cart.component';
+import { OrderPlaceComponent } from './component/order-place/order-place.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { GetallbookComponent } from './component/getallbook/getallbook.component
     LoginComponent,
     SignUpComponent,
     DashboardComponent,
-    GetallbookComponent
+    GetallbookComponent,
+    CartComponent,
+    OrderPlaceComponent
   ],
   imports: [
     BrowserModule,

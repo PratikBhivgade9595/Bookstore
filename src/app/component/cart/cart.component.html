@@ -1,0 +1,38 @@
+<!-- <p>cart works!</p> -->
+<div class="main">
+    <div>
+        <span routerLink="/dashboard/getallbook">Home /</span><span>My cart</span>
+    </div>
+    <div>
+        <div class="cart">
+            <span class="card-text"><b>My cart(1)</b></span>
+            <div>
+                <select>
+                    <option>
+                        Use Current Location
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="bookList">
+            <div *ngFor="let books of bookList" class="box">
+                <div class="align">
+                    <div>
+                        <img src="../../../assets\getBook\book.png" class="img">
+                    </div>
+                    <div class="text">
+                        <div>{{books.product_id.bookName}}</div>
+                        <div class="author">{{books.product_id.author}}</div>
+                        <div class="price"><b>Rs. {{books.product_id.price}}</b></div>
+                    </div>
+                </div>
+                <div class="plus-minus">
+                    <span ><img src="../../../assets\cart\do_not_disturb_on_FILL0_wght400_GRAD0_opsz48.svg" class="minus"></span><div class="count">1</div><span ><img src="../../../assets\cart\add_circle_FILL0_wght400_GRAD0_opsz48.svg" class="plus"></span>
+                    <div class="remove" (click)="removeBookFromCart(books)">
+                        Remove
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

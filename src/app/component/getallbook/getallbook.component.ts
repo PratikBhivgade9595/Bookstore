@@ -17,8 +17,15 @@ export class GetallbookComponent implements OnInit {
 
   getAllBooks() {
     this.book.getBookAll().subscribe((response: any) => {
-      console.log("Get all books successful", response.data);
-      this.bookList = response.data;
+      console.log("Get all books successful", response.result);
+      this.bookList = response.result;
     });
   }
+
+  addToCart(book: any) {
+    this.book.toCartAdded(book._id).subscribe((response: any) => {
+    console.log("Added To Cart", response);
+  });
+}
+
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './component/cart/cart.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { GetallbookComponent } from './component/getallbook/getallbook.component';
 import { LoginComponent } from './component/login/login.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path:'dashboard', component: DashboardComponent,
     children: [
       {path:'', redirectTo: 'getallbook' , pathMatch: 'full'},
-      {path:'getallbook', component: GetallbookComponent}
+      {path:'getallbook', component: GetallbookComponent},
+      {path:'cart', component: CartComponent}
     ]
   },
 ];

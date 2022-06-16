@@ -1,15 +1,40 @@
 <!-- <p>getallbook works!</p> -->
 <div class="text">
     <span style="font-size: 23px;">Books</span>
-    <span>(128 items)</span>
+    <span>(28 items)</span>
 </div>
 <div class="relevance-text">
-    <mat-form-field  appearance="outline">
+    <!-- <mat-form-field appearance="outline">
         <mat-label>Sort by relevance</mat-label>
         <input matInput placeholder="" value="">
-    </mat-form-field>
+    </mat-form-field> -->
+    <select>
+        <option>
+            Sort by relevance
+        </option>
+    </select>
 </div>
-<div class="books">
-    <div *ngFor="let book of bookList">
+
+<div class="entier-block">
+    <div class="mat-card" *ngFor="let book of bookList" style="background-color:  #F5F5F5;">
+
+        <img src="../../../assets/getBook/book.png" class="img">
+        <div  class="block">
+            <div class="title"><b>{{book.bookName}}</b></div>
+            <div>{{book.author}}</div>
+            <div><span style="background-color: #388E3C;">4.5<img src="../../../assets\getBook\star.png"
+                        class="img1"></span><a class="star-text">(20)</a></div>
+
+            <!-- <div>{{book.quantity}}</div> -->
+            <div><b>Rs.{{book.price}}</b></div> 
+            <!-- <div>{{book.discountPrice}}</div> -->
+            <div>
+                <button class="btn-bag" mat-raised-button (click)="addToCart(book)">ADD TO BAG</button> 
+                <button class="btn-wish" mat-raised-button ><mat-icon class="fav-icon">favorite</mat-icon>WISHLIST</button>
+            </div>
+        </div>
+
     </div>
 </div>
+
+<!-- *ngFor="let book of bookList" -->
