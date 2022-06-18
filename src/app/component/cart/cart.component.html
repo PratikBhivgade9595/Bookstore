@@ -1,11 +1,13 @@
 <!-- <p>cart works!</p> -->
 <div class="main">
-    <div>
+    <div class="home">
         <span routerLink="/dashboard/getallbook">Home /</span><span>My cart</span>
     </div>
-    <div>
+    <div class="box">
+        <!-- <mat-card> -->
+
         <div class="cart">
-            <span class="card-text"><b>My cart(1)</b></span>
+            <span class="card-text"><b>My cart({{count}})</b></span>
             <div>
                 <select>
                     <option>
@@ -14,8 +16,9 @@
                 </select>
             </div>
         </div>
+
         <div class="bookList">
-            <div *ngFor="let books of bookList" class="box">
+            <div *ngFor="let books of bookList">
                 <div class="align">
                     <div>
                         <img src="../../../assets\getBook\book.png" class="img">
@@ -27,12 +30,148 @@
                     </div>
                 </div>
                 <div class="plus-minus">
-                    <span ><img src="../../../assets\cart\do_not_disturb_on_FILL0_wght400_GRAD0_opsz48.svg" class="minus"></span><div class="count">1</div><span ><img src="../../../assets\cart\add_circle_FILL0_wght400_GRAD0_opsz48.svg" class="plus"></span>
+                    <span><img src="../../../assets\cart\do_not_disturb_on_FILL0_wght400_GRAD0_opsz48.svg"
+                            class="minus"></span>
+                    <div class="count">1</div><span><img
+                            src="../../../assets\cart\add_circle_FILL0_wght400_GRAD0_opsz48.svg" class="plus"></span>
                     <div class="remove" (click)="removeBookFromCart(books)">
                         Remove
                     </div>
                 </div>
             </div>
         </div>
+        <div class="btn-div" *ngIf="seen">
+            <button class="btn" (click)="placeOrderClick()">PLACE ORDER</button>
+        </div>
     </div>
+    <div class="expansion" *ngIf="visible">
+        <div class="panel">
+            <mat-accordion>
+                <mat-expansion-panel hideToggle class="expansion2">
+                    <mat-expansion-panel-header>
+                        <!-- <mat-panel-title> -->
+                        <!-- <div></div> -->
+                        <!-- </mat-panel-title> -->
+                        <!-- <mat-panel-description>
+                      This is a summary of the content
+                    </mat-panel-description> -->
+                        <div>
+                            <span><b>Customer Details</b></span>
+                            <!-- <button>Add New Address</button> -->
+                        </div>
+
+                    </mat-expansion-panel-header>
+                    <form [formGroup]="addressDetails" (ngSubmit)="orderAddress()">
+                        <div class="main-text">
+                            <div class="customer-text">
+                                <div>
+                                    <div class="text-label">
+                                        <mat-label>Full Name</mat-label>
+                                    </div>
+                                    <div class="">
+                                        <mat-form-field class="mat-form" appearance="outline">
+                                            <input matInput type="text" placeholder="" formControlName="fullName"/>
+                                            <mat-error>Enter Full Name</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-label">
+                                        <mat-label>MobileNumber</mat-label>
+                                    </div>
+                                    <div>
+                                        <mat-form-field class="mat-form" appearance="outline">
+                                            <input matInput type="text" placeholder="" formControlName="mobileNumber"/>
+                                            <mat-error>Enter Mobile Number</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-text">
+                                <div class="text-label">
+                                    <mat-label>Address</mat-label>
+                                </div>
+                                <div>
+                                    <mat-form-field class="addres-div" appearance="outline">
+                                        <input matInput type="text" placeholder="" formControlName="address"/>
+                                        <mat-error>Enter Address</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="customer-text">
+                                <div>
+                                    <div class="text-label">
+                                        <mat-label>city/town</mat-label>
+                                    </div>
+                                    <div>
+                                        <mat-form-field class="mat-form" appearance="outline">
+                                            <input matInput type="text" placeholder="" formControlName="city"/>
+                                            <mat-error>Enter City</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-label">
+                                        <mat-label>State</mat-label>
+                                    </div>
+                                    <div>
+                                        <mat-form-field class="mat-form" appearance="outline">
+                                            <input matInput type="text" placeholder="" formControlName="state"/>
+                                            <mat-error>Enter State</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="type">
+                                <span>Type</span>
+                                <mat-radio-group aria-label="Select an option" class="mat-radio-btn">
+                                    <mat-radio-button value="1">Home</mat-radio-button>
+                                    <mat-radio-button class="work" value="2">Work</mat-radio-button>
+                                    <mat-radio-button class="home" value="3">Other</mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                        </div>
+                        <div *ngIf="continue" class="btn-div">
+                            <button (click)="orderAddress()" class="btn">Continue</button>
+                        </div>
+                        <!-- <p>This is the primary content of the panel.</p> -->
+                    </form>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+                    class="expansion1">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <b>Order Summary</b>
+                        </mat-panel-title>
+                        <!-- <mat-panel-description>
+                            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                        </mat-panel-description> -->
+                    </mat-expansion-panel-header>
+                    <div *ngIf="bookVisible">
+                        <div *ngFor="let books of bookList">
+                            <div class="align1">
+                                <div>
+                                    <img src="../../../assets\getBook\book.png" class="img">
+                                </div>
+                                <div class="text">
+                                    <div>{{books.product_id.bookName}}</div>
+                                    <div class="author">{{books.product_id.author}}</div>
+                                    <div class="price"><b>Rs. {{books.product_id.price}}</b></div>
+                                </div>
+                            </div>
+                            <!-- <p>I'm visible because I am open</p> -->
+                        </div>
+
+                        <div class="btn-div">
+                            <button class="btn" (click)="checkout()">
+                                CHECKOUT
+                            </button>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+
 </div>
+<!-- formControlName="" -->

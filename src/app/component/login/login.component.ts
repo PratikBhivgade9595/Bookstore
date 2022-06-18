@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; //for routing
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {UserserviceService} from '../../service/userService/userservice.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   // users='1'
   
-  constructor(private router: Router, private formBuilder: FormBuilder, private user: UserserviceService) {}
+  constructor(private router: Router, private snackBar: MatSnackBar, private formBuilder: FormBuilder, private user: UserserviceService) {}
 
   ngOnInit(): void {
     // localStorage.setItem('SeesionUser',this.users)  
@@ -42,6 +43,7 @@ export class LoginComponent implements OnInit {
         console.log(response);
         localStorage.setItem("token",response.result.accessToken)
         this.router.navigateByUrl('/dashboard/getallbook')
+        this.snackBar.open("Login Successfully","",{duration: 2000});
       });
 
     }

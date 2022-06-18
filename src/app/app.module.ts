@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // <---------->
 import { AppRoutingModule } from './app-routing.module';
@@ -47,7 +50,10 @@ import { OrderPlaceComponent } from './component/order-place/order-place.compone
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatExpansionModule,
+    MatRadioModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpserviceService } from '../httpService/httpservice.service';
 import { HttpHeaders } from '@angular/common/http';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +57,16 @@ export class BookService {
       })
     } 
     return this.httpService.deleteService('/bookstore_user/remove_cart_item/'+ product_id ,true, header) 
+  }
+
+  orderDetails(reqdata: any) {
+    let header = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    } 
+    return this.httpService.putService('/bookstore_user/edit_user',reqdata, true, header) 
   }
 }
 
