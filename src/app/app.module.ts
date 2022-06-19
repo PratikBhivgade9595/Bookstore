@@ -14,7 +14,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import { AuthguardService } from './service/authguard.service';
 // <---------->
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,8 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { GetallbookComponent } from './component/getallbook/getallbook.component';
 import { CartComponent } from './component/cart/cart.component';
 import { OrderPlaceComponent } from './component/order-place/order-place.component';
+import { WishlistComponent } from './component/wishlist/wishlist.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { OrderPlaceComponent } from './component/order-place/order-place.compone
     DashboardComponent,
     GetallbookComponent,
     CartComponent,
-    OrderPlaceComponent
+    OrderPlaceComponent,
+    WishlistComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,7 @@ import { OrderPlaceComponent } from './component/order-place/order-place.compone
     MatRadioModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [ AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

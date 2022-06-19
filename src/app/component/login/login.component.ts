@@ -11,12 +11,12 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
-  // users='1'
+  users='1'
   
   constructor(private router: Router, private snackBar: MatSnackBar, private formBuilder: FormBuilder, private user: UserserviceService) {}
 
   ngOnInit(): void {
-    // localStorage.setItem('SeesionUser',this.users)  
+    localStorage.setItem('SeesionUser',this.users)  //authguard
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],

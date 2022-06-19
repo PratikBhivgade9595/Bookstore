@@ -1,0 +1,75 @@
+.main {
+    height: 100%;
+    margin-top: 10px;
+    margin-left: 180px;
+}
+
+.home {
+    cursor: pointer;
+}
+
+.img {
+    width: 65px;
+    height: 85px;
+}
+
+.align {
+    display: flex;
+    gap: 30px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.cart {
+    display: flex;
+    gap: 480px;
+    margin-top: 10px;
+    // background-color: yellow;
+    // height: 40px;
+}
+
+.card-text {
+    font-size: medium;
+    margin-left: 50px;
+}
+
+.author {
+    margin-top: 5px;
+    width: 63px;
+    height: 12px;
+    /* UI Properties */
+    //text-align: left;
+    font: normal normal normal 10px/12px Lato;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+}
+
+.price {
+    margin-top: 5px;
+}
+
+.bookList {
+    margin-top: 30px;
+}
+
+.box {
+    width: 774px;
+    height: 100%;
+    /* UI Properties */
+    //background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 1px;
+    margin-top: 40px;
+}
+
+// .align1 {
+//     display: flex;
+//     justify-content: space-between center;
+//     flex-wrap: wrap;
+// }
+
+.img2 {
+    height: 30px;
+
+}

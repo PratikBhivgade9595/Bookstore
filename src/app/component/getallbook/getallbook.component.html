@@ -16,7 +16,7 @@
 </div>
 
 <div class="entier-block">
-    <div class="mat-card" *ngFor="let book of bookList" style="background-color:  #F5F5F5;">
+    <div class="mat-card" *ngFor="let book of bookList | filter: searchWord" style="background-color:  #F5F5F5;">
         <div  class="img-back">
             <img src="../../../assets/getBook/book.png" class="img">
         </div>
@@ -31,7 +31,7 @@
             <!-- <div>{{book.discountPrice}}</div> -->
             <div>
                 <button class="btn-bag" mat-raised-button (click)="addToCart(book)">ADD TO BAG</button>
-                <button class="btn-wish" mat-raised-button>
+                <button class="btn-wish" mat-raised-button  (click)="addToWishlist(book)">
                     <mat-icon class="fav-icon">favorite</mat-icon>WISHLIST
                 </button>
             </div>

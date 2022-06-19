@@ -1,0 +1,39 @@
+<!-- <p>wishlist works!</p> -->
+<div class="main">
+    <div class="home">
+        <span routerLink="/dashboard/getallbook">Home /</span><span>My Wishlist</span>
+    </div>
+    <div class="box">
+        <!-- <mat-card> -->
+
+        <div class="cart">
+            <span class="card-text"><b>My Wishlist({{count}})</b></span>
+            <!-- <div>
+                <select>
+                    <option>
+                        Use Current Location
+                    </option>
+                </select>
+            </div> -->
+        </div>
+
+        <div class="bookList">
+            <div class='align1' *ngFor="let books of bookList">
+                <div class="align">
+                    <div>
+                        <img src="../../../assets\getBook\book.png" class="img">
+                    </div>
+                    <div class="text">
+                        <div>{{books.product_id.bookName}}</div>
+                        <div class="author">{{books.product_id.author}}</div>
+                        <div class="price"><b>Rs. {{books.product_id.price}}</b></div>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="end center" fxLayout="row wrap" (click)="removeBookFromWishlist(books)">
+                    <img src="../../../assets\wishlist\delete_FILL0_wght400_GRAD0_opsz48.svg" class="img2">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- *ngFor="let books of bookList" -->
