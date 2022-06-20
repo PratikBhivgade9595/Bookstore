@@ -54,7 +54,7 @@
 // }
 
 .price {
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .bookList {
@@ -202,4 +202,65 @@
 
 .mat-radio-btn {
     margin-top: 5px;
+}
+
+.footer {
+    margin-top: 10px;
+    background-color: #2E1D1E;
+    background-color: cover;
+    color: white;
+}
+
+@media (max-width: 400px) {
+    .main {
+        width: 400px;
+        margin-left: 7px;
+        height: 100%;
+    }
+
+    .cart {
+        display: flex;
+        gap: 2px;
+        //margin-top: 50px;
+        flex-direction: column;
+    }
+
+    .location {
+        margin-left: 50px;
+        margin-top: 10px;
+    }
+
+    .box {
+        width: 360px;
+        height: 100%;
+        /* UI Properties */
+        //background: #FFFFFF 0% 0% no-repeat padding-box;
+        // border: 1px solid #707070;
+        // border-radius: 1px;
+        // margin-top: 40px;
+    }
+
+    .btn-div {
+        // display: flex;
+        // justify-content: center;
+        // flex-wrap: wrap;
+        // margin-left: 1px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        margin-left: 40px;
+    }
+
+    .expansion {
+        width: 360px;
+        //margin-top: 20px;
+        // border: 1px solid #707070;
+    }
+
+    .addres-div {
+        width: 99%;
+    }
+
+    .footer { 
+        font-size: 11px;
+    }
 }

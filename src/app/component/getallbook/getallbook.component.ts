@@ -8,7 +8,8 @@ import { DataService } from 'src/app/service/dataService/data.service';
   styleUrls: ['./getallbook.component.scss']
 })
 export class GetallbookComponent implements OnInit {
-  bookList: any;
+  bookList: any = [];
+  p: number = 1;
   message: any;
   searchWord: any;
   subscription: any;
@@ -45,4 +46,19 @@ export class GetallbookComponent implements OnInit {
       this.snackBar.open("Book is added to wishList", "", { duration: 2000 });
     });
   }
+
+  lowToHigh(){
+    this.bookList.sort((low:any,high:any)=> low.price-high.price); 
+    }
+
+  highToLow(){
+    this.bookList.sort((low:any,high:any)=> high.price-low.price);
+  }
+
+  newestArrivals(){
+    this.bookList.reverse();
+
+  }
+
+
 }

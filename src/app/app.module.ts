@@ -15,6 +15,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AuthguardService } from './service/authguard.service';
+import {MatSelectModule} from '@angular/material/select';
+import {NgxPaginationModule} from 'ngx-pagination';
 // <---------->
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,7 +59,9 @@ import { FilterPipe } from './pipe/filter.pipe';
     MatMenuModule,
     MatExpansionModule,
     MatRadioModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule,
+    NgxPaginationModule
   ],
   providers: [ AuthguardService],
   bootstrap: [AppComponent]

@@ -8,7 +8,7 @@
 
         <div class="cart">
             <span class="card-text"><b>My cart({{count}})</b></span>
-            <div>
+            <div class="location">
                 <select>
                     <option>
                         Use Current Location
@@ -148,15 +148,15 @@
                         </mat-panel-description> -->
                     </mat-expansion-panel-header>
                     <div *ngIf="bookVisible">
-                        <div *ngFor="let books of bookList">
+                        <div *ngFor="let book of bookList">
                             <div class="align1">
                                 <div>
                                     <img src="../../../assets\getBook\book.png" class="img">
                                 </div>
                                 <div class="text">
-                                    <div>{{books.product_id.bookName}}</div>
-                                    <div class="author">{{books.product_id.author}}</div>
-                                    <div class="price"><b>Rs. {{books.product_id.price}}</b></div>
+                                    <div>{{book.product_id.bookName}}</div>
+                                    <div class="author">{{book.product_id.author}}</div>
+                                    <div class="price"><b>Rs. {{book.product_id.price}}</b></div>
                                 </div>
                             </div>
                             <!-- <p>I'm visible because I am open</p> -->
@@ -172,6 +172,9 @@
             </mat-accordion>
         </div>
     </div>
-
+    
+</div>
+<div  fxLayoutAlign="center" class="footer">
+    <p style="margin-top: 5px;">Copyright &copy;2020, Bookstore Private Limited. All Rights Reserved</p>
 </div>
 <!-- formControlName="" -->

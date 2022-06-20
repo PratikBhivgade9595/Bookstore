@@ -103,6 +103,18 @@ export class BookService {
     }
     return this.httpService.deleteService('/bookstore_user/remove_wishlist_item/' + product_id, true, header)
   }
+
+  orderSummary(reqdata: any) {
+    console.log("order is Place");
+
+    let header = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService('/bookstore_user/add/order', reqdata, true, header)
+  }
 }
 
 

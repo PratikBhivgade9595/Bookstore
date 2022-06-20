@@ -12,12 +12,15 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
   bookList: any;
+  // bookLists: any;
   count: any;
   panelOpenState = false;
   visible = false;
   seen = true;
   continue = true;
   bookVisible = false;
+  orderList: any;
+  orders: any = [];
 
   addressDetails!: FormGroup;
   submitted = false;
@@ -59,6 +62,8 @@ export class CartComponent implements OnInit {
         console.log(response);
       });
 
+
+
     }
   }
 
@@ -87,6 +92,26 @@ export class CartComponent implements OnInit {
 
 
   checkout() {
+    this.orders.forEach((response: any) => {
+      this.orders.push({
+        "product_id": response.product_id._id,
+        "product_name": response.product_id.bookName,
+        "product_quantity": response.product_id.quantity,
+        "product_price": response.product_id.price
+      });
+    });
+    console.log(this.orders);
+    
+    let reqdata ={
+      "place": this.orders
+    }
+    console.log(reqdata)
+
+    this.book.orderSummary(reqdata).subscribe((response: any) =>{
+      console.log(response);
+
+    })
+
     this.route.navigateByUrl('/dashboard/order');
     this.snackBar.open("Order Is Placed", "", { duration: 2000 });
   }

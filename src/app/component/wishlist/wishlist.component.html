@@ -18,7 +18,7 @@
         </div>
 
         <div class="bookList">
-            <div class='align1' *ngFor="let books of bookList">
+            <div class='align1' *ngFor="let books of bookList"  fxLayout="row" fxLayoutAlign="space-between center">
                 <div class="align">
                     <div>
                         <img src="../../../assets\getBook\book.png" class="img">
@@ -29,11 +29,15 @@
                         <div class="price"><b>Rs. {{books.product_id.price}}</b></div>
                     </div>
                 </div>
-                <div fxLayout="row" fxLayoutAlign="end center" fxLayout="row wrap" (click)="removeBookFromWishlist(books)">
+                <div  class="btn" (click)="removeBookFromWishlist(books)">
                     <img src="../../../assets\wishlist\delete_FILL0_wght400_GRAD0_opsz48.svg" class="img2">
                 </div>
             </div>
         </div>
     </div>
+    
+</div>
+<div  fxLayoutAlign="center" class="footer">
+    <p style="margin-top: 5px;">Copyright &copy;2020, Bookstore Private Limited. All Rights Reserved</p>
 </div>
 <!-- *ngFor="let books of bookList" -->
