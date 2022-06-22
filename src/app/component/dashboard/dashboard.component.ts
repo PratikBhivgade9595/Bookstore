@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BookService } from 'src/app/service/bookService/book.service';
 import { DataService } from 'src/app/service/dataService/data.service';
 
 @Component({
@@ -9,9 +10,11 @@ import { DataService } from 'src/app/service/dataService/data.service';
 })
 export class DashboardComponent implements OnInit {
   value: any;
-  constructor( private route: Router,private data: DataService) { }
+  count: any;
+  constructor( private route: Router,private data: DataService, private book: BookService) { }
 
   ngOnInit(): void {
+    this.getCountOFCart();
   }
 
   logout() {
@@ -27,5 +30,12 @@ export class DashboardComponent implements OnInit {
       data: [this.value]
     }
     this.data.changeDataMessage(Ddata)
+  }
+
+  getCountOFCart() {
+    this.book.getBookFromCart().subscribe((response: any) => {
+      console.log("cart items" , response);   //401 error occur logout and signin it is solved
+      this.count = response.result.length;
+    })
   }
 }

@@ -1,0 +1,59 @@
+.btn-wish {
+    margin-left: 10px;
+    color: white;
+    width: 165px;
+    height: 37px;
+    /* UI Properties */
+    background: black 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    //gap: 40px;
+    margin-left: 33px;
+}
+
+.btn-bag {
+    color: white;
+    width: 165px;
+    height: 37px;
+    /* UI Properties */
+    background: #A03037 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    // gap: 40px;
+}
+
+.fav-icon {
+    color: white;
+    font-size: 20px;
+    margin-left: -5px;
+}
+
+
+.home {
+    margin-top: 20px;
+    margin-left: 180px;
+}
+
+.layout-img {
+    display: flex;
+    //margin-left: 180px;
+}
+
+.content {
+    margin-left: 180px;
+    margin-top: 50px;
+    display:flex;
+    gap: 90px;
+}
+
+.img-border {
+    border: solid 1px black;
+}
+
+.img {
+    padding: 40px;
+}
+
+.btn-two {
+    margin-top: 30px;
+}

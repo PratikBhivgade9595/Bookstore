@@ -14,6 +14,7 @@ export class CartComponent implements OnInit {
   bookList: any;
   // bookLists: any;
   count: any;
+  books: any;
   panelOpenState = false;
   visible = false;
   seen = true;
@@ -92,19 +93,38 @@ export class CartComponent implements OnInit {
 
 
   checkout() {
-    this.orders.forEach((response: any) => {
-      this.orders.push({
-        "product_id": response.product_id._id,
-        "product_name": response.product_id.bookName,
-        "product_quantity": response.product_id.quantity,
-        "product_price": response.product_id.price
-      });
-    });
-    console.log(this.orders);
+    // this.orders.forEach((response: any) => {
+    //   this.orders.push({
+    //     product_id: response.product_id._id,
+    //     product_name: response.product_id.bookName,
+    //     product_quantity: response.product_id.quantity,
+    //     product_price: response.product_id.price
+    //   });
+    // });
+    // console.log(this.orders);
     
-    let reqdata ={
-      "place": this.orders
+    // let reqdata ={
+    //   "place": this.orders
+    // }
+    // console.log(reqdata)
+
+    let orders: Array<any> = []
+    for (this.books of this.bookList) {
+
+      let order = {
+        "product_id": this.books.product_id._id,
+        "product_name": this.books.product_id.bookName,
+        "product_quantity": this.books.product_id.quantity,
+        "product_price": this.books.product_id.price,
+      }
+
+      orders.push(order)
     }
+
+    let reqdata = {
+      orders: orders
+    }
+
     console.log(reqdata)
 
     this.book.orderSummary(reqdata).subscribe((response: any) =>{

@@ -36,7 +36,7 @@
         </div>
         <div class="btn1">
             <button mat-icon-button routerLink="./cart">
-                <mat-icon style="color: white;">shopping_cart</mat-icon>
+                <mat-icon style="color: white;" matBadge={{count}} matBadgeSize="small" matBadgePosition="after" matBadgeColor="warn" [matBadgeHidden]="count==0">shopping_cart</mat-icon>
                 <p style="margin-top: -20px; color:white">Cart</p>
             </button>
         </div>

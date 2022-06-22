@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Query } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './component/cart/cart.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -8,6 +8,7 @@ import { OrderPlaceComponent } from './component/order-place/order-place.compone
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { WishlistComponent } from './component/wishlist/wishlist.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { QuickViewComponent } from './component/quick-view/quick-view.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/login',pathMatch:'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
       {path:'getallbook', component: GetallbookComponent},
       {path:'cart', component: CartComponent},
       {path:'order', component: OrderPlaceComponent},
-      {path:'wishlist', component: WishlistComponent}
+      {path:'wishlist', component: WishlistComponent},
+      {path:'view', component: QuickViewComponent}
     ]
   },
 ];

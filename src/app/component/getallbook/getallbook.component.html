@@ -5,18 +5,6 @@
         <span>(28 items)</span>
     </div>
     <div class="relevance-text">
-        <!-- <mat-form-field appearance="outline">
-        <mat-label>Sort by relevance</mat-label>
-        <input matInput placeholder="" value="">
-    </mat-form-field> -->
-        <!-- <select>
-            <option>
-                Sort by relevance
-            </option>
-            <option (click)="LTH()">Price: low to high</option>
-            <option (click)="HTL()">Price: high to low</option>
-            <option (click)="newBook()">New Arrival</option>
-        </select> -->
         <mat-form-field appearance="outline">
             <mat-label>Sort by relevance</mat-label>
             <mat-select>
@@ -30,7 +18,7 @@
     <div class="entier-block">
         <div class="mat-card" *ngFor="let book of bookList | filter: searchWord | paginate: { itemsPerPage: 10, currentPage: p}" style="background-color:  #F5F5F5;">
             <div class="img-back">
-                <img src="../../../assets/getBook/book.png" class="img">
+                <img src="../../../assets/getBook/book.png" class="img" (click)="quickView()">
             </div>
             <div class="block">
                 <div class="title"><b>{{book.bookName}}</b></div>
@@ -43,10 +31,11 @@
                 <div><b>Rs.{{book.price}}</b></div>
                 <!-- <div>{{book.discountPrice}}</div> -->
                 <div class="btn">
-                    <button class="btn-bag" mat-raised-button (click)="addToCart(book)">ADD TO BAG</button>
-                    <button class="btn-wish" mat-raised-button (click)="addToWishlist(book)">
+                    <button class="btn-bag" mat-raised-button (click)="addToCart(book)" *ngIf="visible1">ADD TO BAG</button>
+                    <button class="btn-wish" mat-raised-button (click)="addToWishlist(book)" *ngIf="visible1">
                         <mat-icon class="fav-icon">favorite</mat-icon>WISHLIST
                     </button>
+                    <button mat-raised-button class="cart-btn" *ngIf="visible2">ADDED TO CART</button>
                 </div>
             </div>
 

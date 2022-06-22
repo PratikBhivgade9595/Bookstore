@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/service/bookService/book.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataService } from 'src/app/service/dataService/data.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-getallbook',
   templateUrl: './getallbook.component.html',
@@ -9,19 +10,21 @@ import { DataService } from 'src/app/service/dataService/data.service';
 })
 export class GetallbookComponent implements OnInit {
   bookList: any = [];
+  visible1 = true
+  visible2 = false
   p: number = 1;
   message: any;
   searchWord: any;
   subscription: any;
 
-  constructor(private book: BookService, private snackBar: MatSnackBar, private data: DataService) { }
+  constructor(private book: BookService, private snackBar: MatSnackBar, private data: DataService, private route: Router) { }
 
   ngOnInit(): void {
     this.getAllBooks();
     this.subscription = this.data.currentData.subscribe(message => {
       this.message = message;
       console.log("display card search data======", message.data[0]);
-      this.searchWord=message.data[0]
+      this.searchWord = message.data[0]
       // this.getAllNotes();
     })
   }
@@ -38,6 +41,8 @@ export class GetallbookComponent implements OnInit {
       console.log("Added To Cart", response);
       this.snackBar.open("Book is added to cart", "", { duration: 2000 });
     });
+    this.visible1 = false
+    this.visible2 = true
   }
 
   addToWishlist(book: any) {
@@ -47,18 +52,20 @@ export class GetallbookComponent implements OnInit {
     });
   }
 
-  lowToHigh(){
-    this.bookList.sort((low:any,high:any)=> low.price-high.price); 
-    }
-
-  highToLow(){
-    this.bookList.sort((low:any,high:any)=> high.price-low.price);
+  lowToHigh() {
+    this.bookList.sort((low: any, high: any) => low.price - high.price);
   }
 
-  newestArrivals(){
+  highToLow() {
+    this.bookList.sort((low: any, high: any) => high.price - low.price);
+  }
+
+  newestArrivals() {
     this.bookList.reverse();
 
   }
 
-
+  quickView() {
+    this.route.navigateByUrl('/dashboard/view');
+  }
 }

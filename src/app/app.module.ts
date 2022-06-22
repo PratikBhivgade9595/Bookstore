@@ -17,6 +17,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AuthguardService } from './service/authguard.service';
 import {MatSelectModule} from '@angular/material/select';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MatBadgeModule} from '@angular/material/badge';
 // <---------->
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { OrderPlaceComponent } from './component/order-place/order-place.component';
 import { WishlistComponent } from './component/wishlist/wishlist.component';
 import { FilterPipe } from './pipe/filter.pipe';
+import { QuickViewComponent } from './component/quick-view/quick-view.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { FilterPipe } from './pipe/filter.pipe';
     CartComponent,
     OrderPlaceComponent,
     WishlistComponent,
-    FilterPipe
+    FilterPipe,
+    QuickViewComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import { FilterPipe } from './pipe/filter.pipe';
     MatRadioModule,
     MatSnackBarModule,
     MatSelectModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatBadgeModule
   ],
   providers: [ AuthguardService],
   bootstrap: [AppComponent]
