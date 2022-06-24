@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
   bookList: any;
+  sum: any;
   // bookLists: any;
   count: any;
   books: any;
@@ -22,11 +23,14 @@ export class CartComponent implements OnInit {
   bookVisible = false;
   orderList: any;
   orders: any = [];
+  quantityToBuy: any;
 
   addressDetails!: FormGroup;
   submitted = false;
 
-  constructor(private book: BookService, private snackBar: MatSnackBar, private formBuilder: FormBuilder, private route: Router) { }
+  constructor(private book: BookService, private snackBar: MatSnackBar, private formBuilder: FormBuilder, private route: Router) { 
+    
+  }
 
   ngOnInit(): void {
     this.getCartBooks();
@@ -73,6 +77,10 @@ export class CartComponent implements OnInit {
       console.log("Get From Cart", response)
       this.bookList = response.result;
       this.count = response.result.length;
+
+      this.sum = this.bookList.reduce((acc:any, val:any)=> { //acc = i = 0 forloop
+            return acc + val.product_id.price;
+           }, 0)
 
     });
   }
@@ -135,5 +143,25 @@ export class CartComponent implements OnInit {
     this.route.navigateByUrl('/dashboard/order');
     this.snackBar.open("Order Is Placed", "", { duration: 2000 });
   }
+
+  addItem() {
+    let reqdata = {
+      quantityToBuy: this.quantityToBuy
+    }
+
+    this.book.addQuantity(this.book,reqdata).subscribe((response : any) => {
+      console.log("added",response)
+    });
+
+    
+  }
+
+
+  // orderTotalPriceOfBook() {
+  //   this.sum = this.bookList.reduce((acc:any, val:any)=> {
+  //     return acc + val.product_id.price;
+  //   }, 0)
+  // }
+  
 }
 

@@ -194,6 +194,7 @@
 
 .home {
   margin-left: 30px;
+  
 }
 
 .work {
@@ -211,13 +212,25 @@
     color: white;
 }
 
+.totalPrice {
+    margin-top: 20px;
+    margin-left: 28px;
+    width: 30px;
+}
+
+.total {
+    display: flex;
+}
 @media (max-width: 400px) {
     .main {
-        width: 400px;
+        width: 300px;
         margin-left: 16px;
         height: 100%;
     }
 
+    .home {
+        //width: 50px;
+    }
     .cart {
         display: flex;
         gap: 2px;

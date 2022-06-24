@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'signin', component: SignUpComponent},
   {path:'dashboard', component: DashboardComponent,canActivate: [AuthenticationGuard],
     children: [
-      {path:'', redirectTo: 'getallbook' , pathMatch: 'full'},
+      {path:'dashboard', redirectTo: '/dashboard/getallbook', pathMatch: 'full'},
       {path:'getallbook', component: GetallbookComponent},
       {path:'cart', component: CartComponent},
       {path:'order', component: OrderPlaceComponent},

@@ -115,6 +115,39 @@ export class BookService {
     }
     return this.httpService.postService('/bookstore_user/add/order', reqdata, true, header)
   }
+
+  addQuantity(product: any,reqdata: any) {
+    let header = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.putService('/bookstore_user/cart_item_quantity/'+product, reqdata, true, header)
+  }
+
+  feedback(product_id: any, data: any) {
+    
+    let header = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService('/bookstore_user/add/feedback/' + product_id, data, true, header)
+
+  }
+
+  getFeedback(product_id: any) {
+    let header = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.getService('/bookstore_user/get/feedback/'+ product_id, true, header)
+  }
+  
 }
 
 

@@ -18,7 +18,7 @@
     <div class="entier-block">
         <div class="mat-card" *ngFor="let book of bookList | filter: searchWord | paginate: { itemsPerPage: 10, currentPage: p}" style="background-color:  #F5F5F5;">
             <div class="img-back">
-                <img src="../../../assets/getBook/book.png" class="img" (click)="quickView()">
+                <img src="../../../assets/getBook/book.png" class="img" (click)="quickView(book)">
             </div>
             <div class="block">
                 <div class="title"><b>{{book.bookName}}</b></div>

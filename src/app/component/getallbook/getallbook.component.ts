@@ -37,12 +37,14 @@ export class GetallbookComponent implements OnInit {
   }
 
   addToCart(book: any) {
-    this.book.toCartAdded(book._id).subscribe((response: any) => {
+    this.book.toCartAdded(book._id).subscribe((response: any) => {  
       console.log("Added To Cart", response);
       this.snackBar.open("Book is added to cart", "", { duration: 2000 });
+      
     });
-    this.visible1 = false
-    this.visible2 = true
+    this.visible1 = false;
+    this.visible2 = true;
+    
   }
 
   addToWishlist(book: any) {
@@ -65,7 +67,8 @@ export class GetallbookComponent implements OnInit {
 
   }
 
-  quickView() {
-    this.route.navigateByUrl('/dashboard/view');
+  quickView(book: any) {
+    localStorage.setItem("bookId",book._id);
+    this.route.navigateByUrl('/dashboard/view')
   }
 }

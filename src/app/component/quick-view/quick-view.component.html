@@ -1,55 +1,85 @@
 <!-- <<p>quick-view works!</p> -->
-<div class="home">
-    <span routerLink="/dashboard/getallbook">Home/</span><span>Book(01)</span>
-</div>
-<div class="content">
-    <div class="layout-img">
-        <div>
-            <div>
-                <img src="../../../assets\quickView\book1.png">
-            </div>
-            <div>
-                <img src="../../../assets\quickView\book2.png">
-            </div>
-        </div>
-        <div >
-            <div class="img-border">
-                <img src="../../../assets\quickView\book3.png" class="img">
-            </div>
-
-            <div class="btn-two">
-                <button mat-raised-button class="btn-bag">ADD TO BAG</button>
-                <button class="btn-wish" mat-raised-button>
-                    <mat-icon class="fav-icon">favorite</mat-icon>WISHLIST
-                </button>
-            </div>
-        </div>
+<div class="main">
+    <div class="home">
+        <span routerLink="/dashboard/getallbook">Home/</span><span>Book(01)</span>
     </div>
-    <div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-            <h5>Book Detail</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eligendi beatae culpa veniam ducimus
-                libero nihil! Laboriosam recusandae ex minus, iure, illum odio consequatur ducimus perferendis cum vitae
-                repudiandae nisi?</p>
-        </div>
-        <div>
-            <h3>Customer Feedback</h3>
-            <div>
-                <span>Overall rating</span>s
+    <div class="content">
+        <div class="layout-img">
+            <div class="img-div">
                 <div>
-
+                    <img src="../../../assets\quickView\book1.png">
                 </div>
-                <mat-card>
-                    <input placeholder="Write your review...">
-                </mat-card>
-                <button mat-raised-button>submit</button>
+                <div>
+                    <img src="../../../assets\quickView\book2.png">
+                </div>
+            </div>
+            <div class="box">
+                <div class="img-border">
+                    <img src="../../../assets\quickView\book3.png" class="img">
+                </div>
+
+                <div class="btn-two">
+                    <button mat-raised-button class="btn-bag">ADD TO BAG</button>
+                    <button class="btn-wish" mat-raised-button>
+                        <mat-icon class="fav-icon">favorite</mat-icon>WISHLIST
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="mini-block-1">
+                <div style="font-size: x-large;">{{Book?.bookName}}</div>
+                <div class="author">{{Book?.author}}</div>
+                <div><span style="background-color: #388E3C; color: white;">4.5<img
+                            src="../../../assets\getBook\grade_FILL0_wght400_GRAD0_opsz48.svg" class="img1"></span><a
+                        class="star-text">(20)</a></div>
+                <div style="font-size: x-large; margin-top: 10px;"><b>Rs.{{Book?.price}}</b></div>
+            </div>
+            <div class="mini-block-2">
+                <h5>Book Detail</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eligendi beatae culpa veniam
+                    ducimus
+                    libero nihil! Laboriosam recusandae ex minus, iure, illum odio consequatur ducimus perferendis cum
+                    vitae
+                    repudiandae nisi?<br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusantium
+                    quibusdam, praesentium, dolor quia, inventore aperiam assumenda impedit est ut odio nemo ipsum
+                    minima id sunt eos excepturi! Doloremque, incidunt!<br>Lorem ipsum dolor sit, amet consectetur
+                    adipisicing elit. Nobis autem delectus atque debitis iste minima tempora dignissimos in tempore hic
+                    et dolores, rerum laudantium odio, harum, esse inventore commodi laborum.
+                </p>
+            </div>
+            <div>
+                <h3><b>Customer Feedback</b></h3>
+                <div class="mini-block-3">
+                    <span style="margin-left: 25px;">Overall rating</span>
+
+                    <div class="rate ">
+
+                        <input type="radio" id="star5" name="rate" [(ngModel)]="value" value="5" />
+                        <label for="star5" title="Extremely Good ">5 stars</label>
+                        <input type="radio" id="star4" name="rate" [(ngModel)]="value" value="4" />
+                        <label for="star4" title="Very Good ">4 stars</label>
+                        <input type="radio" id="star3" name="rate" [(ngModel)]="value" value="3" />
+                        <label for="star3" title="Good ">3 stars</label>
+                        <input type="radio" id="star2" name="rate" [(ngModel)]="value" value="2" />
+                        <label for="star2" title="Not Bad ">2 stars</label>
+                        <input type="radio" id="star1" name="rate" [(ngModel)]="value" value="1" />
+                        <label for="star1" title="Bad">1 star</label>
+                    </div>
+                    <mat-card class="mat-card">
+                        <input placeholder="Write your review..." class="input" [(ngModel)]="feedback">
+                    </mat-card>
+                    <button mat-raised-button class=btn (click)="feedbackSubmit()">submit</button>
+
+                    <div *ngFor = 'let feedback of feedbackArray' class="array-div">
+                        <div style="margin-top:10px"><b>{{feedback.user_id.fullName}}</b></div>
+                        <div>{{feedback.rating}}
+                        </div>
+                        <div class="comment">{{feedback.comment}}</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<!-- [(ngModel)]="value" -->
