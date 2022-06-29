@@ -18,6 +18,7 @@ import { AuthguardService } from './service/authguard.service';
 import {MatSelectModule} from '@angular/material/select';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatDialogModule} from '@angular/material/dialog';
 // <---------->
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,9 @@ import { OrderPlaceComponent } from './component/order-place/order-place.compone
 import { WishlistComponent } from './component/wishlist/wishlist.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { QuickViewComponent } from './component/quick-view/quick-view.component';
+import { AdminPageComponent } from './component/admin-page/admin-page.component';
+import { AdminAddComponent } from './component/admin-add/admin-add.component';
+import { AdminUpdateComponent } from './component/admin-update/admin-update.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,10 @@ import { QuickViewComponent } from './component/quick-view/quick-view.component'
     OrderPlaceComponent,
     WishlistComponent,
     FilterPipe,
-    QuickViewComponent
+    QuickViewComponent,
+    AdminPageComponent,
+    AdminAddComponent,
+    AdminUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,8 @@ import { QuickViewComponent } from './component/quick-view/quick-view.component'
     MatSnackBarModule,
     MatSelectModule,
     NgxPaginationModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDialogModule
   ],
   providers: [ AuthguardService],
   bootstrap: [AppComponent]

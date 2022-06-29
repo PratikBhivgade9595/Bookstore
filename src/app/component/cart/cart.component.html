@@ -31,10 +31,10 @@
                 </div>
                 <div class="plus-minus">
                     <span><img src="../../../assets\cart\do_not_disturb_on_FILL0_wght400_GRAD0_opsz48.svg"
-                            class="minus"></span>
-                    <div class="count">1</div><span><img
+                            class="minus" (click)="removeItems(books)"></span>
+                    <div class="count">{{books.quantityToBuy}}</div><span><img
                             src="../../../assets\cart\add_circle_FILL0_wght400_GRAD0_opsz48.svg" class="plus"
-                            (click)="addItem()"></span>
+                            (click)="addItem(books)"></span>
                     <div class="remove" (click)="removeBookFromCart(books)">
                         Remove
                     </div>

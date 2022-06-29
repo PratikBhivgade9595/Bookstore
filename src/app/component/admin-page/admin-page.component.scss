@@ -1,0 +1,52 @@
+table,th,td {
+    width: 1200px;
+    margin:auto;
+    font: normal normal normal 18px/20px Lato;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.img {
+    width: 80px;
+    height: 90px;
+}
+
+.action-btn {
+    display: flex;
+    margin-left: 20px;
+    }
+
+.remove-img {
+    margin-left: 30px;
+}
+
+.btn {
+    width: 90px;
+    border-radius: 3px;
+    background-color: indianred;
+    color: white;
+    
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.add-but {
+    width: 100px;
+    height: 32px;
+/* UI Properties */
+    background: black 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    color: blanchedalmond;
+    margin-top: 20px;
+    margin-left: 1100px;
+}
+
+.text {
+    margin-top: 10px;
+    margin-left: 100px;
+}

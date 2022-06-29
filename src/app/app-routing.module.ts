@@ -9,8 +9,11 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { WishlistComponent } from './component/wishlist/wishlist.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { QuickViewComponent } from './component/quick-view/quick-view.component';
+import { AdminService } from './service/adminService/admin.service';
+import { AdminPageComponent } from './component/admin-page/admin-page.component';
 
 const routes: Routes = [
+  
   {path:'', redirectTo: '/login',pathMatch:'full'},
   {path:'login', component: LoginComponent},
   {path:'signin', component: SignUpComponent},
@@ -21,7 +24,8 @@ const routes: Routes = [
       {path:'cart', component: CartComponent},
       {path:'order', component: OrderPlaceComponent},
       {path:'wishlist', component: WishlistComponent},
-      {path:'view', component: QuickViewComponent}
+      {path:'view', component: QuickViewComponent},
+      {path:'admin', component: AdminPageComponent},
     ]
   },
 ];

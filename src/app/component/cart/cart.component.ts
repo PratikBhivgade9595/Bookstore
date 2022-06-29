@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
   bookVisible = false;
   orderList: any;
   orders: any = [];
-  quantityToBuy: any;
+  quantityToBuy = 1;
 
   addressDetails!: FormGroup;
   submitted = false;
@@ -85,6 +85,8 @@ export class CartComponent implements OnInit {
     });
   }
 
+  
+
   removeBookFromCart(book: any) {
     this.book.removeBook(book._id).subscribe((response: any) => {
       console.log("remove from cart", response)
@@ -144,18 +146,36 @@ export class CartComponent implements OnInit {
     this.snackBar.open("Order Is Placed", "", { duration: 2000 });
   }
 
-  addItem() {
-    let reqdata = {
-      quantityToBuy: this.quantityToBuy
-    }
+  // addItem() {
+  //   this.quantityToBuy = this.quantityToBuy + 1;
+  // }
 
-    this.book.addQuantity(this.book,reqdata).subscribe((response : any) => {
-      console.log("added",response)
-    });
-
-    
+  addItem(books : any) {
+    this.quantityToBuy = books.quantityToBuy;
+    this.quantityToBuy = this.quantityToBuy + 1;
+    console.log("increased", this.quantityToBuy);
+    this.bookItemsQuantity(books);
   }
 
+  bookItemsQuantity(books : any) {
+    let reqdata = {
+      quantityToBuy: this.quantityToBuy,
+    }
+
+    this.book.addQuantity(books.product_id._id,reqdata).subscribe((response : any) => {
+      console.log("added",response)
+    });
+  }
+
+  removeItems(books: any) {
+    this.quantityToBuy = books.quantityToBuy;
+    if(this.quantityToBuy > 0){
+      this.quantityToBuy = this.quantityToBuy - 1;
+      console.log("decrease", this.quantityToBuy);
+      // this.bookItemsQuantity(books);
+    }
+   
+  }
 
   // orderTotalPriceOfBook() {
   //   this.sum = this.bookList.reduce((acc:any, val:any)=> {

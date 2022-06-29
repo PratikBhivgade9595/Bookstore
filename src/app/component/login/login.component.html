@@ -9,7 +9,7 @@
             </div>
         </mat-card>
         <mat-card class="card1">
-            <div fxLayout="row" fxLayoutAlign="space-around center" style="margin-top: 20px;">
+            <div fxLayout="row" fxLayoutAlign="space-around center" style="margin-top: 13px;">
                 <div class="text1">
                     <p>LOGIN</p>
                 </div>
@@ -23,6 +23,15 @@
             </div>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div style="margin-left: 58px;">
+                    <div >
+                        <mat-form-field  class="mat-option" appreance="outline">
+                            <mat-label>Select Option</mat-label>
+                            <mat-select formControlName="valueSelected">
+                                <mat-option value="User">User</mat-option>
+                                <mat-option value="Admin">Admin</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
                     <div>
                         <div class="font-size">
                             <p>Email Id</p>

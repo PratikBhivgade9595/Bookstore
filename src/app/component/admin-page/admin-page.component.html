@@ -1,0 +1,42 @@
+<!-- <p>admin-page works!</p> -->
+<div>
+    <h2 class="text">BookStore AdminPage</h2>
+</div>
+<div>
+    <button class="add-but" mat-raised-button (click)="openDialog()">Add</button>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>Book Image</th>
+            <th>Author</th>
+            <th>Book Name</th>
+            <th>Description</th>
+            <th>Discount Price</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody *ngFor= "let book of bookList">
+        <tr>
+            <th></th>
+            <th><img src="../../../assets\getBook\book.png" class="img"></th>
+            <td>{{book.author}}</td>
+            <td>{{book.bookName}}</td>
+            <td>{{book.description}}</td>
+            <td>Rs.{{book.discountPrice}}</td>
+            <td>Rs.{{book.price}}</td>
+            <td>{{book.quantity}}</td>
+            <td>
+                <div class="action-btn">
+                    <button mat-button color="warn" (click)="openDialog1()">Update</button>
+                    <button mat-button color="primary">Remove</button>
+                </div>
+            </td>
+            
+        </tr>
+            
+    </tbody>
+</table>

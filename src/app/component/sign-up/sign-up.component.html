@@ -10,7 +10,7 @@
         </div>
     </mat-card>
     <mat-card class="card1">
-        <div fxLayout="row" fxLayoutAlign="space-around center" style="margin-top: 20px;">
+        <div fxLayout="row" fxLayoutAlign="space-around center" style="margin-top: 13px;">
             <div class="text1" routerLink="/login">
                 <p>LOGIN</p>
             </div>
@@ -19,16 +19,25 @@
             </div>
         </div>
         <div class="line">
-        
+
         </div>
-        <form [formGroup]="signinForm" (ngSubmit)="onSubmit()" >
+        <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
             <div style="margin-left: 58px;">
+                <div >
+                    <mat-form-field  class="mat-option" appreance="outline">
+                        <mat-label>Select Option</mat-label>
+                        <mat-select formControlName="valueSelected">
+                            <mat-option value="User">User</mat-option>
+                            <mat-option value="Admin">Admin</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
                 <div>
                     <div class="font">
                         <p>Full Name</p>
                     </div>
                     <mat-form-field class="input-field" appearance="outline">
-                        <input  matInput class="input" type="text" placeholder="full name" formControlName="fullName"/>
+                        <input matInput class="input" type="text" placeholder="full name" formControlName="fullName" />
                         <mat-error>Enter Full Name</mat-error>
                     </mat-form-field>
                 </div>
@@ -37,7 +46,7 @@
                         <p>Email Id</p>
                     </div>
                     <mat-form-field class="input-field" appearance="outline">
-                        <input  matInput class="input" type="text" placeholder="email" formControlName="email"/>
+                        <input matInput class="input" type="text" placeholder="email" formControlName="email" />
                         <mat-error class="error">Enter Email Id</mat-error>
                     </mat-form-field>
                 </div>
@@ -46,7 +55,7 @@
                         <p>Password</p>
                     </div>
                     <mat-form-field class="input-field" appearance="outline">
-                        <input  matInput class="input" type="text" placeholder="password" formControlName="password"/>
+                        <input matInput class="input" type="text" placeholder="password" formControlName="password" />
                         <mat-error>Enter Password</mat-error>
                     </mat-form-field>
                 </div>
@@ -55,7 +64,8 @@
                         <p>Mobile Number</p>
                     </div>
                     <mat-form-field class="input-field" appearance="outline">
-                        <input  class="input"  matInput type="text" placeholder="mobile number" formControlName="mobileNumber"/>
+                        <input class="input" matInput type="text" placeholder="mobile number"
+                            formControlName="mobileNumber" />
                         <mat-error>Enter Mobile Number</mat-error>
                     </mat-form-field>
                 </div>
