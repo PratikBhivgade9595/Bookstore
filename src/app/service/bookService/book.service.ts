@@ -148,6 +148,17 @@ export class BookService {
     return this.httpService.getService('/bookstore_user/get/feedback/'+ product_id, true, header)
   }
   
+
+  addNewBook(reqData: any) {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService('/bookstore_user/admin/add/book', reqData, true, header)
+  
+  }
 }
 
 

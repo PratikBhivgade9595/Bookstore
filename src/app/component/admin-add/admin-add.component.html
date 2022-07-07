@@ -1,71 +1,150 @@
 <!-- <p>admin-add works!</p> -->
-<div>
-    <h2>Add Book Details</h2>
+<div *ngIf="visible1">
+    <form [formGroup]="bookDetailForm" (ngSubmit)="addBook()">
+        <div>
+            <h2>Add Book Details</h2>
+        </div>
+        <div>
+            <div class="font-size">
+                <p>Author</p>
+            </div>
+            <div>
+                <mat-form-field class="input-fields" appearance="outline">
+                    <input matInput type="text" placeholder="author" formControlName="author"/>
+                    <mat-error>Enter author..</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <div class="font-size">
+                <p>Book Name</p>
+            </div>
+            <div>
+                <mat-form-field class="input-fields" appearance="outline">
+                    <input matInput type="text" placeholder="Book Name"  formControlName="bookName"/>
+                    <mat-error>Enter Book Name..</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <div class="font-size">
+                <p>Description</p>
+            </div>
+            <div>
+                <mat-form-field class="input-fields" appearance="outline">
+                    <input matInput type="text" placeholder="Description"  formControlName="description"/>
+                    <mat-error>Enter Description..</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <div class="font-size">
+                <p>Price</p>
+            </div>
+            <div>
+                <mat-form-field class="input-fields" appearance="outline">
+                    <input matInput type="text" placeholder="Price"  formControlName="price"/>
+                    <mat-error>Enter Price..</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <div class="font-size">
+                <p>Discount Price</p>
+            </div>
+            <div>
+                <mat-form-field class="input-fields" appearance="outline">
+                    <input matInput type="text" placeholder="Discount Price"  formControlName="discountPrice"/>
+                    <mat-error>Enter Discount Price..</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <div class="font-size">
+                <p>Quantity</p>
+            </div>
+            <div>
+                <mat-form-field class="input-fields" appearance="outline">
+                    <input matInput type="text" placeholder="Quantity"  formControlName="quantity"/>
+                    <mat-error>Enter Quantity..</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <button class="add-but" mat-raised-button (click)="addBook()">Add</button>
+        </div>
+    </form>
 </div>
-<div>
-    <div class="font-size">
-        <p>Author</p>
+<div *ngIf="visible2">
+    <div>
+        <h2>Update Book Details 1</h2>
     </div>
     <div>
-        <mat-form-field class="input-fields" appearance="outline">
-            <input matInput type="text" placeholder="author"  />
-            <mat-error>Enter author..</mat-error>
-        </mat-form-field>
-    </div>
-</div>
-<div>
-    <div class="font-size">
-        <p>Book Name</p>
-    </div>
-    <div>
-        <mat-form-field class="input-fields" appearance="outline">
-            <input matInput type="text" placeholder="Book Name"  />
-            <mat-error>Enter Book Name..</mat-error>
-        </mat-form-field>
-    </div>
-</div>
-<div>
-    <div class="font-size">
-        <p>Description</p>
+        <div class="font-size">
+            <p>Author</p>
+        </div>
+        <div>
+            <mat-form-field class="input-fields" appearance="outline">
+                <input matInput type="text" placeholder="author" />
+                <mat-error>Enter author..</mat-error>
+            </mat-form-field>
+        </div>
     </div>
     <div>
-        <mat-form-field class="input-fields" appearance="outline">
-            <input matInput type="text" placeholder="Description"  />
-            <mat-error>Enter Description..</mat-error>
-        </mat-form-field>
-    </div>
-</div>
-<div>
-    <div class="font-size">
-        <p>Price</p>
-    </div>
-    <div>
-        <mat-form-field class="input-fields" appearance="outline">
-            <input matInput type="text" placeholder="Price"  />
-            <mat-error>Enter Price..</mat-error>
-        </mat-form-field>
-    </div>
-</div>
-<div>
-    <div class="font-size">
-        <p>Discount Price</p>
+        <div class="font-size">
+            <p>Book Name</p>
+        </div>
+        <div>
+            <mat-form-field class="input-fields" appearance="outline">
+                <input matInput type="text" placeholder="Book Name" />
+                <mat-error>Enter Book Name..</mat-error>
+            </mat-form-field>
+        </div>
     </div>
     <div>
-        <mat-form-field class="input-fields" appearance="outline">
-            <input matInput type="text" placeholder="Discount Price"  />
-            <mat-error>Enter Discount Price..</mat-error>
-        </mat-form-field>
-    </div>
-</div>
-<div>
-    <div class="font-size">
-        <p>Quantity</p>
+        <div class="font-size">
+            <p>Description</p>
+        </div>
+        <div>
+            <mat-form-field class="input-fields" appearance="outline">
+                <input matInput type="text" placeholder="Description" />
+                <mat-error>Enter Description..</mat-error>
+            </mat-form-field>
+        </div>
     </div>
     <div>
-        <mat-form-field class="input-fields" appearance="outline">
-            <input matInput type="text" placeholder="Quantity"  />
-            <mat-error>Enter Quantity..</mat-error>
-        </mat-form-field>
+        <div class="font-size">
+            <p>Price</p>
+        </div>
+        <div>
+            <mat-form-field class="input-fields" appearance="outline">
+                <input matInput type="text" placeholder="Price" />
+                <mat-error>Enter Price..</mat-error>
+            </mat-form-field>
+        </div>
     </div>
+    <div>
+        <div class="font-size">
+            <p>Discount Price</p>
+        </div>
+        <div>
+            <mat-form-field class="input-fields" appearance="outline">
+                <input matInput type="text" placeholder="Discount Price" />
+                <mat-error>Enter Discount Price..</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div>
+        <div class="font-size">
+            <p>Quantity</p>
+        </div>
+        <div>
+            <mat-form-field class="input-fields" appearance="outline">
+                <input matInput type="text" placeholder="Quantity" />
+                <mat-error>Enter Quantity..</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
 </div>
 <!-- formControlName="email" -->

@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
   getCountOFCart() {
     this.book.getBookFromCart().subscribe((response: any) => {
       console.log("cart items" , response);   //401 error occur logout and signin it is solved
-      this.count = response.result.length;
+      //this.count = response.result.length;
     })
   }
 }
