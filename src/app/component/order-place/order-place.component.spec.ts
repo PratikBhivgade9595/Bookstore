@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { OrderPlaceComponent } from './order-place.component';
 
 describe('OrderPlaceComponent', () => {
@@ -8,6 +9,10 @@ describe('OrderPlaceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        MatSnackBarModule
+      ],
       declarations: [ OrderPlaceComponent ]
     })
     .compileComponents();

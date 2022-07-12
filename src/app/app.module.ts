@@ -19,6 +19,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatDialogModule} from '@angular/material/dialog';
+
+
 // <---------->
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -73,7 +75,8 @@ import { AdminUpdateComponent } from './component/admin-update/admin-update.comp
     MatSelectModule,
     NgxPaginationModule,
     MatBadgeModule,
-    MatDialogModule
+    MatDialogModule,
+    
   ],
   providers: [ AuthguardService],
   bootstrap: [AppComponent]
